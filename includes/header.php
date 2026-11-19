@@ -9,7 +9,7 @@
 
   <title>Aisha Events Centre | Events, Dining & Hospitality in Tamale</title>
 
-  <link rel="icon" href="https://res.cloudinary.com/ltect-homes/image/upload/v1750363970/logo-main_m57kgj.jpg" type="image/png" />
+  <link rel="icon" href="https://res.cloudinary.com/ltect-homes/image/upload/v1795085667/logoa_ieut7g.jpg" type="image/jpeg" />
 
   <!-- Bootstrap CSS Stylesheet -->
   <link

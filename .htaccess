@@ -1,16 +1,32 @@
 RewriteEngine On
 
-# Redirect old URLs to clean URLs
-RewriteRule ^pages/about/(.+)\.php$ /about/$1 [R=301,L]
+# Redirect direct .php file access to clean URLs (prevent direct access to /pages/...)
+RewriteCond %{THE_REQUEST} \s/+pages/([^.]+)\.php[\s?] [NC]
+RewriteRule ^pages/(.+)\.php$ /%1 [R=301,L]
 
-# Map clean About URLs to their PHP files
-RewriteRule ^about/(.+)/?$ pages/about/$1.php [L]
-
-# Remove .php from other URLs
+# Redirect root .php files to clean URLs
 RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
 RewriteRule ^(.+)\.php$ /$1 [R=301,L]
 
-# Internally load PHP files without extension
+# Map clean About URLs to their PHP files
+RewriteRule ^about/(.+)$ pages/about/$1.php [L]
+
+# Map facilities URL
+RewriteRule ^facilities/?$ pages/facilities/index.php [L]
+
+# Map gallery URL
+RewriteRule ^gallery/?$ pages/gallery/index.php [L]
+
+# Map services URLs
+RewriteRule ^services/(.+)$ pages/services/$1.php [L]
+
+# Map booking URL
+RewriteRule ^booking/?$ pages/booking/booking.php [L]
+
+# Map contact URL
+RewriteRule ^contact/?$ contact.php [L]
+
+# Internally load PHP files without extension (fallback for root files)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f

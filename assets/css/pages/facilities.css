@@ -1,0 +1,545 @@
+@import url("/assets/css/root.css");
+
+/* =========================================
+   MAIN SECTION
+========================================= */
+
+.facilities-section {
+  font-family: "Barlow", sans-serif;
+  padding: 100px 24px 90px;
+  margin-top: 0;
+  background: var(--bg-default);
+  overflow: hidden;
+}
+
+.facilities-section .port-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: transparent;
+  border: none;
+}
+
+/* =========================================
+   HEADER
+========================================= */
+
+.facilities-section .port-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 40px;
+  margin: 0 0 55px;
+}
+
+.facilities-section .title-section {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 760px;
+}
+
+.facilities-section .project-label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.facilities-section .project-label::after {
+  content: "";
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-primary);
+}
+
+.facilities-section .main-title {
+  margin: 0;
+  max-width: 700px;
+  font-family: "Barlow", sans-serif !important;
+  font-size: clamp(1.5rem, 5vw, 3.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -1.8px;
+  color: var(--text-heading);
+  background: none;
+  -webkit-text-fill-color: var(--text-heading);
+  text-shadow: none;
+}
+
+.facilities-section .main-title span {
+  color: var(--color-primary);
+  -webkit-text-fill-color: var(--color-primary);
+}
+
+.facilities-section .facilities-intro {
+  max-width: 650px;
+  margin: 5px 0 0;
+  color: var(--text-light);
+  opacity: 1;
+  font-size: 16px;
+  line-height: 1.85;
+  font-weight: 400;
+}
+
+/* =========================================
+   HEADER BUTTON
+========================================= */
+
+.facilities-section .view-all-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-shrink: 0;
+  padding: 17px 24px;
+  border: 1px solid var(--color-primary);
+  border-radius: 3px;
+  background: var(--color-primary);
+  color: var(--bg-default);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  cursor: pointer;
+  box-shadow: none;
+  transition: all 0.35s ease;
+}
+
+.facilities-section .view-all-btn span {
+  font-size: 19px;
+  transition: transform 0.3s ease;
+}
+
+.facilities-section .view-all-btn:hover {
+  background: transparent;
+  color: var(--color-primary);
+  transform: translateY(-3px);
+}
+
+.facilities-section .view-all-btn:hover span {
+  transform: translate(3px, -3px);
+}
+
+/* =========================================
+   SWIPER
+========================================= */
+
+.facilities-section .portfolio-swiper {
+  width: 100%;
+  margin-top: 0;
+  padding: 8px 2px 25px;
+  overflow: hidden;
+}
+
+.facilities-section .portfolio-swiper .swiper-wrapper {
+  display: flex;
+  align-items: stretch;
+}
+
+.facilities-section .portfolio-swiper .swiper-slide {
+  width: auto;
+  height: auto;
+  flex-shrink: 0;
+  display: flex;
+  transition: transform 0.4s ease;
+}
+
+/* =========================================
+   FACILITY CARD
+========================================= */
+
+.facilities-section .project-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--bg-default);
+  border: 1px solid rgba(128, 128, 128, 0.16);
+  border-radius: 10px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.045);
+  cursor: pointer;
+  transition:
+    transform 0.45s ease,
+    box-shadow 0.45s ease,
+    border-color 0.45s ease;
+}
+
+.facilities-section .project-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--color-primary);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.facilities-section .project-image {
+  width: 100%;
+  height: 320px;
+  position: relative;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #343434;
+  isolation: isolate;
+}
+
+.facilities-section .project-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.04) 25%,
+    rgba(0, 0, 0, 0.42) 100%
+  );
+  transition: background 0.4s ease;
+}
+
+.facilities-section .project-card:hover .project-image::before {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12), rgba(0, 0, 0, 0.55));
+}
+
+/* =========================================
+   IMAGE NUMBER
+========================================= */
+
+.facilities-section .facility-number {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  left: 20px;
+  padding: 9px 12px;
+  color: #fff;
+  background: rgba(15, 15, 15, 0.55);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+/* =========================================
+   IMAGE ACTION
+========================================= */
+
+.facilities-section .add-icon {
+  position: absolute;
+  z-index: 2;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 400;
+  box-shadow: none;
+  transition: all 0.35s ease;
+}
+
+.facilities-section .project-card:hover .add-icon {
+  transform: rotate(45deg);
+  background: #fff;
+  color: var(--color-primary);
+}
+
+/* =========================================
+   CARD INFORMATION
+========================================= */
+
+.facilities-section .project-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 27px 25px 25px;
+  background: var(--bg-default);
+  overflow: hidden;
+}
+
+.facilities-section .project-location {
+  margin-bottom: 10px;
+  color: var(--color-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  line-height: 1.5;
+}
+
+.facilities-section .project-name {
+  margin: 0 0 12px;
+  color: var(--text-heading);
+  background: none;
+  -webkit-text-fill-color: var(--text-heading);
+  font-family: "Barlow", sans-serif;
+  font-size: 23px;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.3px;
+}
+
+.facilities-section .facility-description {
+  margin: 0 0 22px;
+  color: var(--text-light);
+  opacity: 1;
+  font-size: 14px;
+  line-height: 1.8;
+  font-weight: 400;
+}
+
+.facilities-section .facility-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+  color: var(--text-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  transition: color 0.3s ease;
+}
+
+.facilities-section .facility-link span {
+  color: var(--color-primary);
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.facilities-section .project-card:hover .facility-link {
+  color: var(--color-primary);
+}
+
+.facilities-section .project-card:hover .facility-link span {
+  transform: translateX(6px);
+}
+
+/* =========================================
+   SLIDER CONTROLS
+========================================= */
+
+.facilities-section .facilities-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  margin-top: 25px;
+}
+
+.facilities-section .facilities-pagination {
+  flex: 1;
+}
+
+.facilities-section .portfolio-swiper .swiper-pagination {
+  position: static !important;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 0;
+  text-align: left;
+}
+
+.facilities-section .portfolio-swiper .swiper-pagination-bullet {
+  width: 25px;
+  height: 3px;
+  margin: 0 !important;
+  border-radius: 0;
+  background: var(--color-primary);
+  opacity: 0.25;
+  transition: all 0.35s ease;
+}
+
+.facilities-section .portfolio-swiper .swiper-pagination-bullet-active {
+  width: 48px;
+  opacity: 1;
+  transform: none;
+}
+
+.facilities-section .facilities-arrows {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.facilities-section .portfolio-swiper .swiper-button-next,
+.facilities-section .portfolio-swiper .swiper-button-prev {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin: 0;
+  border: 1px solid rgba(128, 128, 128, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--text-dark);
+  transition: all 0.3s ease;
+}
+
+.facilities-section .portfolio-swiper .swiper-button-next:hover,
+.facilities-section .portfolio-swiper .swiper-button-prev:hover {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.facilities-section .portfolio-swiper .swiper-button-next::after,
+.facilities-section .portfolio-swiper .swiper-button-prev::after {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1024px) {
+  .facilities-section {
+    padding: 80px 22px;
+  }
+
+  .facilities-section .port-header {
+    margin-bottom: 40px;
+  }
+
+  .facilities-section .project-image {
+    height: 290px;
+  }
+
+  .facilities-section .project-info {
+    padding: 24px 20px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 768px) {
+  .facilities-section {
+    padding: 65px 18px;
+  }
+
+  .facilities-section .port-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 25px;
+    margin: 0 0 35px;
+  }
+
+  .facilities-section .title-section {
+    gap: 13px;
+  }
+
+  .facilities-section .project-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+
+  .facilities-section .main-title {
+    font-size: clamp(2.2rem, 9vw, 3.1rem);
+    letter-spacing: -1px;
+    line-height: 1.12;
+  }
+
+  .facilities-section .facilities-intro {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+
+  .facilities-section .view-all-btn {
+    padding: 15px 19px;
+    font-size: 10px;
+  }
+
+  .facilities-section .portfolio-swiper {
+    padding-bottom: 20px;
+  }
+
+  .facilities-section .project-image {
+    height: 270px;
+  }
+
+  .facilities-section .project-info {
+    padding: 23px 20px;
+  }
+
+  .facilities-section .project-name {
+    font-size: 21px;
+  }
+
+  .facilities-section .facility-description {
+    font-size: 13px;
+  }
+
+  .facilities-section .facilities-controls {
+    margin-top: 18px;
+  }
+
+  .facilities-section .portfolio-swiper .swiper-button-next,
+  .facilities-section .portfolio-swiper .swiper-button-prev {
+    width: 38px;
+    height: 38px;
+  }
+}
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 420px) {
+  .facilities-section {
+    padding: 55px 14px;
+  }
+
+  .facilities-section .project-image {
+    height: 235px;
+  }
+
+  .facilities-section .project-name {
+    font-size: 19px;
+  }
+}
+
+/* =========================================
+   AISHA FACILITY IMAGES
+========================================= */
+
+.facilities-section .project-1 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794306694/_Q8A0737_acngjj.jpg");
+}
+
+.facilities-section .project-2 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794306630/_Q8A0722_haqukw.jpg");
+}
+
+.facilities-section .project-3 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794305628/_Q8A0826_gvy223.jpg");
+}
+
+.facilities-section .project-4 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794305598/_Q8A0810_uhwhc1.jpg");
+}
+
+.facilities-section .project-5 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794305605/_Q8A0816_o6ertx.jpg");
+}
+
+.facilities-section .project-6 {
+  background-image: url("https://res.cloudinary.com/ltect-homes/image/upload/v1794305057/_Q8A0691_pxisai.jpg");
+}

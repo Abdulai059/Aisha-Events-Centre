@@ -1,0 +1,255 @@
+@import url("/assets/css/root.css");
+
+.aisha-cta {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+
+  width: 80%;
+  min-height: 380px;
+  margin: 0 auto;
+
+  padding: 50px 24px 35px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #171717;
+  color: #ffffff;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.aisha-cta-background {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  background-size: cover;
+  background-position: center 45%;
+  transform: scale(1.02);
+}
+
+.aisha-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: rgba(12, 12, 12, 0.75);
+}
+
+.aisha-cta-container {
+  width: 100%;
+  max-width: 820px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.aisha-cta-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  color: #f0aaaa;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.aisha-cta-eyebrow::before {
+  content: "";
+  width: 20px;
+  height: 1px;
+  background: var(--color-primary);
+}
+
+.aisha-cta h2 {
+  max-width: 850px;
+  margin: 0 auto;
+  color: #ffffff;
+  font-size: 60px;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: -2.5px;
+}
+
+.aisha-cta h2 span {
+  /* display: block; */
+  color: var(--color-primary);
+}
+
+.aisha-cta p {
+  max-width: 650px;
+  margin: 25px auto 35px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.aisha-cta-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.aisha-cta-primary,
+.aisha-cta-secondary {
+  min-height: 56px;
+  padding: 0 25px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 25px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.aisha-cta-primary {
+  background: var(--color-primary);
+  color: #ffffff;
+}
+
+.aisha-cta-primary span {
+  font-size: 19px;
+  transition: transform 0.3s ease;
+}
+
+.aisha-cta-primary:hover {
+  background: #ad2020;
+  color: #ffffff;
+  transform: translateY(-3px);
+}
+
+.aisha-cta-primary:hover span {
+  transform: translate(3px, -3px);
+}
+
+.aisha-cta-secondary {
+  border: 1px solid rgba(255, 255, 255, 0.55);
+  color: #ffffff;
+}
+
+.aisha-cta-secondary span {
+  transition: transform 0.3s ease;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+  60% {
+    transform: translateY(-3px);
+  }
+}
+
+.aisha-cta-secondary:hover {
+  background: #ffffff;
+  border-color: #ffffff;
+  color: #222222;
+}
+
+.aisha-cta-secondary:hover span {
+  transform: translate(3px, -3px);
+}
+
+.aisha-cta-bottom {
+  width: 100%;
+  margin-top: 75px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  letter-spacing: 0.5px;
+}
+
+.aisha-cta-secondary i {
+  font-size: 20px;
+  color: #25d366;
+}
+
+.aisha-cta-secondary:hover i {
+  color: #25d366;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .aisha-cta {
+    min-height: auto;
+    padding: 90px 24px 30px;
+  }
+
+  .aisha-cta h2 {
+    letter-spacing: -1.5px;
+  }
+
+  .aisha-cta-bottom {
+    margin-top: 60px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .aisha-cta {
+    width: 100%;
+    padding: 80px 20px 25px;
+  }
+
+  .aisha-cta h2 {
+    font-size: 43px;
+  }
+
+  .aisha-cta p {
+    font-size: 14px;
+  }
+
+  .aisha-cta-actions {
+    width: 100%;
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .aisha-cta-primary,
+  .aisha-cta-secondary {
+    width: 100%;
+  }
+
+  .aisha-cta-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .aisha-cta {
+    width: 90%;
+    min-height: auto;
+    padding: 90px 24px 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .aisha-cta *,
+  .aisha-cta *::before,
+  .aisha-cta *::after {
+    transition: none !important;
+  }
+}

@@ -1,0 +1,17 @@
+RewriteEngine On
+
+# Redirect old URLs to clean URLs
+RewriteRule ^pages/about/(.+)\.php$ /about/$1 [R=301,L]
+
+# Map clean About URLs to their PHP files
+RewriteRule ^about/(.+)/?$ pages/about/$1.php [L]
+
+# Remove .php from other URLs
+RewriteCond %{THE_REQUEST} \s/+(.+?)\.php[\s?] [NC]
+RewriteRule ^(.+)\.php$ /$1 [R=301,L]
+
+# Internally load PHP files without extension
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^(.+)$ $1.php [L]

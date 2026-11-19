@@ -1,0 +1,219 @@
+
+/*-------------------------
+MISSION AND VISION SECTION 
+-------------------------*/
+@import url('/assets/css/root.css');
+
+
+
+.mission-section {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.m-header {
+  text-align: center;
+ padding: 1rem 0 4rem;
+}
+
+.m-header h1 {
+  font-size: 3.5rem;
+  font-weight: 450;
+  text-align: start;
+  color: var(--text-heading);
+  margin-top: 9rem;
+}
+
+/* Mission Section */
+.mission {
+  margin-bottom: 5rem;
+  overflow: hidden;
+}
+
+.mission-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.mission-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+.mission-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mission-text {
+  padding: 40px;
+}
+
+.mission-title {
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+/* Vision Section */
+.vision {
+  margin-bottom: 40px;
+  overflow: hidden;
+}
+
+.vision-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: center;
+}
+
+.vision-text {
+  padding: 40px 40px 40px 10px;
+  order: -1;
+}
+
+.vision-title {
+  font-size: 2.5rem;
+  color: #dc3545;
+  font-weight: 500;
+  margin-bottom: 20px;
+  line-height: 1.2;
+}
+
+.vision-statement {
+  font-size: 14.7px;
+  line-height: 1.7;
+  margin-bottom: 30px;
+  color: var(--text-dark);
+  text-align: justify;
+}
+
+
+
+.vision-image {
+  position: relative;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* ---------------------
+  Intern Section 
+  -------------------------*/
+.intern {
+  padding: 50px 0;
+}
+
+.m-intern-title {
+  font-size: 1.9rem;
+  color: var(--text-dark);
+  font-weight: 450;
+  margin-bottom: 15px;
+  position: relative;
+  padding-left: 25px;
+}
+
+.m-intern-title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 4px;
+  height: 40px;
+  background-color: var(--color-primary);
+}
+
+.m-intern-description {
+  font-size: 14.7px;
+  line-height: 1.7;
+  color: var(--text-dark);
+  /* margin-bottom: 12px; */
+  padding-left: 25px;
+  text-align: justify;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+  .m-header {
+    text-align: center;
+   padding: 0 0 10px;
+  }
+
+  .mission {
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+
+  .m-header h1 {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 30px;
+    text-align: center;
+    margin-top: 6rem;
+  }
+
+  .mission-section{
+   padding: 20px;
+  }
+  .mission-content,
+  .vision-content {
+    grid-template-columns: 1fr;
+  }
+
+  .mission-image,
+  .vision-image {
+    height: 250px;
+    border-radius: 8px;
+  }
+
+  .mission-text,
+  .vision-text {
+    padding: 30px 20px;
+    order: 2;
+  }
+
+  .vision-text {
+    order: 2;
+  }
+
+  .mission-title,
+  .vision-title,
+  .intern-title {
+    font-size: 1.8rem;
+  }
+
+  .intern {
+    padding: 30px 20px;
+  }
+
+  .m-intern-title {
+    font-size: 1.4rem;
+  }
+  .m-intern-description {
+    font-size: 14.7px;
+    text-align: left;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .mission-title,
+  .vision-title,
+  .intern-title {
+    font-size: 1.5rem;
+  }
+}
